@@ -4,7 +4,7 @@
 
 At first glance, this is a compact Windows console program. What makes it dangerous is the sequence of actions visible in its code: it expects a Zemana driver beside itself, prepares a kernel-driver service, talks to the driver's device interface, targets Windows security processes, and builds commands to save sensitive registry hives and request an LSASS memory dump.
 
-> **Verdict: Malicious — high confidence.** The code strongly supports a BYOVD (Bring Your Own Vulnerable Driver) loader and credential-access assessment. The supplied console capture reports one security-process termination and successful completion messages for three registry-save commands. The LSASS dump path is printed, but the dump file was not independently verified.
+> **Verdict: Malicious** The code strongly supports a BYOVD (Bring Your Own Vulnerable Driver) loader and credential-access assessment. The supplied console capture reports one security-process termination and successful completion messages for three registry-save commands. The LSASS dump path is printed, but the dump file was not independently verified.
 
 This README is the complete case study. The screenshots are kept to one per distinct checkpoint where possible; the x64dbg views add useful call-site and control-flow context rather than repeating the same decompiler view.
 
@@ -190,23 +190,7 @@ To turn this strong code-based assessment into a tighter incident timeline, the 
 
 ## ✅ Final verdict
 
-**Malicious — high confidence.** The conclusion rests on the combination of expected `zam64.sys` loading, kernel-driver service setup, communication with the Zemana device interface, targeted security-process termination requests, registry-hive save commands, and an LSASS dump attempt. The supplied runtime screenshot adds support for the reported termination of one security process and successful completion messages for the three hive-save commands.
-
-The available evidence does **not** prove a valid LSASS dump, data exfiltration, the local driver's provenance, or attribution to a particular actor or campaign. Those limits belong in the report because they separate what the evidence shows from what still needs confirmation.
+**Malicious** The conclusion rests on the combination of expected `zam64.sys` loading, kernel-driver service setup, communication with the Zemana device interface, targeted security-process termination requests, registry-hive save commands, and an LSASS dump attempt. The supplied runtime screenshot adds support for the reported termination of one security process and successful completion messages for the three hive-save commands.
 
 ---
-
-## 📚 References
-
-- [LOLDrivers — `zam64.sys`](https://www.loldrivers.io/drivers/e5f12b82-8d07-474e-9587-8c7b3714d60c/)
-- [Malwarebytes — Exploit.CVE202131728](https://www.malwarebytes.com/blog/detections/exploit-cve202131728)
-- [MITRE ATT&CK — LSASS Memory (T1003.001)](https://attack.mitre.org/techniques/T1003/001/)
-
-## 📂 Repository contents
-
-- [`rules/zemana_byovd_loader.yar`](rules/zemana_byovd_loader.yar) — specific and broader hunting heuristics.
-- [`indicators/IOCS.md`](indicators/IOCS.md) — sample identifiers and behavior indicators.
-- [`evidence/`](evidence/) — ten selected IDA, x64dbg, and console screenshots.
-- [`PUBLISHING-NOTES.md`](PUBLISHING-NOTES.md) — repository metadata and publication reminders.
-
 > **Disclaimer:** For defensive research and authorized incident response. Static code analysis describes capability; runtime claims are limited to the supplied console capture. The original driver binary, raw endpoint telemetry, registry-hive output files, and LSASS dump were not supplied.
