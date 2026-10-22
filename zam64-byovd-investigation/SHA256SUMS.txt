@@ -1,0 +1,15 @@
+97d9660e5382f09db8c6f954699cff530b79222438bf539479f786aadeb723dc  ./PUBLISHING-NOTES.md
+171326fcbb21d7e5179f5ce153e8acb3e712686954b78d947cfb44cbbcb7cf57  ./README.md
+b8fbc9ffec5f57505ba0c068b482dca14b8ff9d99fd010133f7f5d5061b6e892  ./evidence/01-detect-it-easy.png
+6637d33096bc099eff36365da2a563a707d3c739ce60c94086a9ed8f15790c35  ./evidence/02-pestudio-metadata.png
+4d7fd1978c6fe03c0d67763ec53e67393a3a74682bb67243f11031d3e8865e0f  ./evidence/03-ida-driver-path-check.png
+58163c0330d9c90a2d960c07664818a5658bea6f2f1d7a10590ee5ae23f6ac5d  ./evidence/04-ida-driver-service-management.png
+f503e935ffc3899c44d8a621d027666c956dee37e4078e3fc9b82ef850bd6ee6  ./evidence/05-ida-process-enumeration-loop.png
+646302522ca6942ca4c03c4885ed1252eda1f847b9fab7174e9085a146824a55  ./evidence/06-x64dbg-device-control-target-list.png
+826fe9f484a42b5599d613c3c52fffb086fc959c9893c7effc3d34285f169989  ./evidence/07-x64dbg-process-termination-branch.png
+180ce6f58aeb7b21e53d6054b20a9a20bce31668cb942532900c60ba059ba306  ./evidence/08-x64dbg-keep-defender-loop.png
+c3532166bd082cf423adb8b43cdaf0736061ac5bea754bfa02a6df40616d70d0  ./evidence/09-x64dbg-registry-and-lsass-commands.png
+47de9fbfba0f5d480bb47c6f95475025e5c970944e4c5a00a02a2331b962be0d  ./evidence/10-runtime-console-confirmation.png
+fa7fa43524ab1a47af3ae42e1773eda963643224ae6c77fa7a92cdaa97898225  ./evidence/README.md
+4787f920724d809946a1fd0276438ba17d05bd7197f271dd7928c6961006086c  ./indicators/IOCS.md
+d651cdfaaac280deef2bbd792cc04817a24ec894a5e08e298e3e29ebfb9ea8a8  ./rules/zemana_byovd_loader.yar
