@@ -6,8 +6,6 @@ At first glance, this is a compact Windows console program. What makes it danger
 
 > **Verdict: Malicious** The code strongly supports a BYOVD (Bring Your Own Vulnerable Driver) loader and credential-access assessment. The supplied console capture reports one security-process termination and successful completion messages for three registry-save commands. The LSASS dump path is printed, but the dump file was not independently verified.
 
-This README is the complete case study. The screenshots are kept to one per distinct checkpoint where possible; the x64dbg views add useful call-site and control-flow context rather than repeating the same decompiler view.
-
 ---
 
 ## 🧾 1. Establish exactly which sample we are looking at
